@@ -1,11 +1,12 @@
-<<<<<<< Local Changes
 body {
+    font-size: 16px;
     font-size: 40px;
     padding: 8px 16px 0px 8px;
 }
 
 header {
-    padding: 0 0 16px 0;
+    padding: 0 0 50px 0;
+    font-size: 30px;
 }
 
 li {
@@ -60,12 +61,8 @@ img {
 }
 
 @media only screen and (min-width: 36em) {
-<<<<<<< Local Changes
     article { 
-=======
     /* Larger Screens */
-    article {
->>>>>>> External Changes
         width: calc(100% - 200px);
         float: right;
         margin-right: 0;
@@ -91,10 +88,6 @@ img {
     }
 
 }
-<<<<<<< Local Changes
-=======
->>>>>>> External Changes
-=======
 
 @media only print {
     /**
@@ -102,7 +95,7 @@ img {
      * to be so big
      */
     header h1 {
-        font-size: 16px;
+        font-size: 160px;
         font-style: italic;
     } 
 	
@@ -115,9 +108,3 @@ img {
         display: none;
     }
 }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> External Changes
->>>>>>> FETCH_HEAD
