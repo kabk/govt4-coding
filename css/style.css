@@ -69,8 +69,8 @@ img {
         width: calc(100% - 200px);
         float: right;
         margin-right: 0;
-		font-size: 400px;
-		line-height: 420px;
+		font-size: 300px;
+		line-height: 320px;
 		
 		
 		-moz-transform: scale(-1, 1);
