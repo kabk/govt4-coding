@@ -1,4 +1,3 @@
-<<<<<<< Local Changes
 body {
     font-size: 16px;
     padding: 8px 16px 0px 8px;
@@ -61,12 +60,9 @@ img {
 }
 
 @media only screen and (min-width: 36em) {
-<<<<<<< Local Changes
     article { 
-=======
     /* Larger Screens */
     article {
->>>>>>> External Changes
         width: calc(100% - 200px);
         float: right;
         margin-right: 0;
@@ -90,10 +86,6 @@ img {
     }
 
 }
-<<<<<<< Local Changes
-=======
->>>>>>> External Changes
-=======
 
 @media only print {
     /**
@@ -114,9 +106,3 @@ img {
         display: none;
     }
 }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> External Changes
->>>>>>> FETCH_HEAD
