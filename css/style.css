@@ -1,5 +1,6 @@
 body {
     font-size: 16px;
+    font-size: 40px;
     padding: 8px 16px 0px 8px;
 }
 
@@ -62,12 +63,13 @@ img {
 @media only screen and (min-width: 36em) {
     article { 
     /* Larger Screens */
-    article {
         width: calc(100% - 200px);
         float: right;
         margin-right: 0;
 		font-size: 300px;
 		line-height: 320px;
+		font-color: blue;
+		font-family: times, sans-serif;
 		
 		
 		-moz-transform: scale(-1, 1);
