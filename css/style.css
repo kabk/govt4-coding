@@ -102,7 +102,12 @@ img {
     header h1 {
         font-size: 16px;
         font-style: italic;
-    }
+    } 
+	
+	header h2 { 
+		font-size: 16px; 
+		font-color: red;
+	}
     /* And the navigation we don’t need */
     nav {
         display: none;
