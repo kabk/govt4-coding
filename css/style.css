@@ -1,4 +1,5 @@
 body {
+    font-size: 16px;
     padding: 8px 16px 0px 8px;
 }
 
@@ -32,12 +33,33 @@ p {
     margin-top: 0;
 }
 
+/* This makes the images scale to the full width of the page */
 img {
     width: 100%;
     height: auto;
 }
 
+
+@media screen and (max-width: 36em) {
+    /* These CSS instructions are only used, if the 
+     * ‘media query’ above turns out to be true 
+     * 
+     * Media query’s can use properties like:
+     * width
+     * orientation
+     * resolution
+     * screen / print
+     */
+    /* Smaller Screens */
+    /* Our heading can be smaller */
+     header h1 {
+        font-size: 16px;
+        font-style: italic;
+    }
+}
+
 @media only screen and (min-width: 36em) {
+    /* Larger Screens */
     article {
         width: calc(100% - 200px);
         float: right;
@@ -52,4 +74,19 @@ img {
         clear: both;
     }
 
+}
+
+@media only print {
+    /**
+     * When printing, the header is useful but it doesn’t need
+     * to be so big
+     */
+    header h1 {
+        font-size: 16px;
+        font-style: italic;
+    }
+    /* And the navigation we don’t need */
+    nav {
+        display: none;
+    }
 }
