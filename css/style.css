@@ -1,12 +1,17 @@
-<<<<<<< Local Changes
 body {
+<<<<<<< HEAD
     font-size: 16px;
     padding: 8px 16px 0px 8px; 
     background-color: black;
+=======
+    font-size: 24px;
+    padding: 8px 16px 0px 8px;
+>>>>>>> FETCH_HEAD
 }
 
 header {
-    padding: 0 0 16px 0;
+    padding: 0 0 50px 0;
+    font-size: 30px;
 }
 
 li {
@@ -15,12 +20,12 @@ li {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin: 0;
+    margin: 20px;
 }
 
 ul, ol {
-    margin-top: 0;
-    padding-left: 0;
+    margin-top: 20px;
+    padding-left: 20px;
 }
 
 a, a:hover, a:visited, a:active {
@@ -28,7 +33,7 @@ a, a:hover, a:visited, a:active {
 }
 
 h1 a {
-	    text-decoration: line-through;
+    text-decoration: line-through;
 }
 
 p {
@@ -61,25 +66,24 @@ img {
 }
 
 @media only screen and (min-width: 36em) {
-<<<<<<< Local Changes
     article { 
-=======
     /* Larger Screens */
-    article {
->>>>>>> External Changes
         width: calc(100% - 200px);
         float: right;
         margin-right: 0;
-		font-size: 400px;
-		line-height: 420px;
+		font-size: 32px;
+		line-height: 32px;
+		font-color: blue;
+		font-family: times, sans-serif;
 		
 		
+/* If ever we want to mirror the text:
 		-moz-transform: scale(-1, 1);
 		-webkit-transform: scale(-1, 1);
 		-o-transform: scale(-1, 1);
 		-ms-transform: scale(-1, 1);
 		transform: scale(-1, 1);
-    }
+*/    }
     nav {
         width: 200px;
         float: left;
@@ -90,10 +94,6 @@ img {
     }
 
 }
-<<<<<<< Local Changes
-=======
->>>>>>> External Changes
-=======
 
 @media only print {
     /**
@@ -101,19 +101,16 @@ img {
      * to be so big
      */
     header h1 {
-        font-size: 16px;
+        font-size: 24px;
         font-style: italic;
     } 
+<<<<<<< HEAD
 	
 	
+=======
+>>>>>>> FETCH_HEAD
     /* And the navigation we don’t need */
     nav {
         display: none;
     }
 }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> External Changes
->>>>>>> FETCH_HEAD
