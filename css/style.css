@@ -1,7 +1,8 @@
 <<<<<<< Local Changes
 body {
     font-size: 16px;
-    padding: 8px 16px 0px 8px;
+    padding: 8px 16px 0px 8px; 
+    background-color: black;
 }
 
 header {
@@ -104,10 +105,7 @@ img {
         font-style: italic;
     } 
 	
-	header h2 { 
-		font-size: 16px; 
-		font-color: red;
-	}
+	
     /* And the navigation we don’t need */
     nav {
         display: none;
