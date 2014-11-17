@@ -24,9 +24,22 @@
         </nav>
         <article>
 <h2>Thesis Terminal Page</h2>
-git checkout -b gh-pages --track origin/gh-pages
 
+<p>Op Github projecten is er vaak een onderscheid tussen de code en de documentatie. De documentatie bestaat uit HTML en kan op internet worden gepubliceerd. Wij werken met alléén maar HTML. Daarom moeten we git vertellen dat de documentatie ‘branch’ onze belangrijkste ‘branch’ is. Wat is een ‘branch’? Git staat toe om parallel aan meerdere varianten van een project te werken. Als github een branch ‘gh-pages’ aantreft, wordt deze op internet gepubliceerd.</p>
 
+<p>Ga eerst in de terminal naar de map waarin je Git zich bevindt, bv: (aanpassen met je username en locatie)</p>
+
+<pre>cd /Users/thomas/kabk/Scriptie-map</pre>
+
+<p>En dan</p>
+
+<pre>git checkout -b gh-pages
+git --set-upstream origin/gh-pages
+</pre>
+
+<p>Je pagina komt online op http://kabk.github.io/naam-van-de-repository</p>
+
+<p>In de Github interface kun je bij settings, default branch op gh-pages zetten.</p>
 
         </article>
     </body>
