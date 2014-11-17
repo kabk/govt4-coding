@@ -1,5 +1,5 @@
 body {
-    background-color: white;
+    background-color: red;
     font-size: 34px;
     padding: 8px 16px 0px 8px;
 }
@@ -24,7 +24,7 @@ ul, ol {
 }
 
 a, a:hover, a:visited, a:active {
-    color: #FF0000;
+    color: white;
 }
 
 h1 a {
