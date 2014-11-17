@@ -1,0 +1,12 @@
+digraph {
+rankdir=LR;
+
+"Word/etc." -> HTML
+
+HTML -> ePUB
+HTML -> "Revisions in HTML or PDF" -> HTML
+HTML -> XML -> inDesign -> PDF
+HTML -> "Print Stylesheet" -> PDF -> Print
+
+
+}

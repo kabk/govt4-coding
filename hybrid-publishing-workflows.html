@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>GOVT4 Coding :: Hybrid Publishing Workflows</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+    </head>
+    <body>
+        <header>
+            <h1><a href="index.html">GOVT4 Coding</a></h1>
+            <style>
+            @media print {
+                p, .break {
+                    page-break-after: always;
+                }
+            }
+            </style>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="install-party.html">Install Party</a></li>
+                <li><a href="native-vs-hybrid-vs-web-the-ecosystem-of-mobile-applications.html">Native vs. Hybrid vs. Web: The ecosystem of the mobile applications</a></li>
+                <li><a href="responsive-layout.html">Responsive layout</a></li>
+                <li>Hybrid Publishing Workflows</li>
+                <li><a href="https://kabk.github.io/govt4-coding-and-interactive-media/">Exercises</a></li>
+                <li><a href="references.html">References</a></li>
+            </ul>
+        </nav>
+        <article>
+            <h2 class="break">Hybrid Publishing Workflows</h2>
+
+            <p>Print is not dead</p>
+            
+            <p>It is a book, remember?</p>
+            
+            <p><img src="media/carsonendofprint.jpg" width="535" height="391" alt="Carsonendofprint"></p>
+
+            <p>Print is no longer the default window to other media though—it is the screen that has taken that place. Yet print and screen are in a constant dialog. Buy ‘Post-Digital Print: The Mutation of Publishing Since 1894’ from our friends at Onomatopee, and download the PDF from our friends at Monoskop.</p>
+            
+            <p><img src="media/post_digital_print_motto_00.jpg" width="837" height="1083" alt="Post Digital Print Motto 00"></p>
+            
+            <p>Consult Silvio Lorusso’s <a href="http://p-dpa.net/" title="P—DPA">Post-digital Publishing Archive</a>.</p>
+            
+            <p><img src="media/pdpa.png" width="1076" height="772" alt="Pdpa"></p>
+            
+            <p>Hybrid Publishing work-flows</p>
+            
+            <p>The following schema shows how most small publishers in the cultural field work, and how many of you probably work as well:</p>
+            
+            <p><img src="media/indesign-trad.png" width="603" height="131" alt="Indesign Trad"></p>
+            
+            <p>After the original text is put into inDesign, proofs are done with PDF’s. The designer directly edits in inDesign. This means that not only the layout is stored in inDesign, but the canonical text ends up being stored there as well.</p>
+            
+            <p>The problem with this workflow is that the inDesign file is not easily re-usable for other formats. One can generate a PDF, and people have been creating ePUBs with reasonable success in inDesign, but there is no way to generate proper HTML.</p>
+            
+            <p>Most large publishers therefore follow a different model. Before starting to do the layout, they convert their source document into a format called XML. XML is way of storing documents with tags, just like HTML, except that businesses can make up their own tags that fit their workflow. Publishers might use some existing XML standard, or make up their own.</p>
+            
+            <p><img src="media/large_publisher.png" width="688" height="275" alt="Large Publisher"></p>
+            
+            <p>InDesign allows to read in XML. A certain tag can be coupled to a certain paragraph style. The key in this workflow is that inDesign can watch the XML document for changes, and update the document whenever the XML changes. So instead of correcting text and typos in inDesign, you do it in the XML document. A large publisher might also employ an interface to edit the source document, and a form of archiving and revision control to track the changes.</p>
+            
+            <p>A publisher will also set up a workflow to convert the XML to HTML, and to ePUB (based in part on the HTML). This workflow is known as ‘single source’, and its largest advantage is that a change in the source text is automatically reproduced throughout all mediums. The downsides however, are also clear. This workflow calls for a lot of technological infrastructure. It requires knowledge within the organisation of myriad different technologies, and most smaller publishers don’t have dedicted technical staff. A large publisher might have parts of this workflow custom built; a small publisher won’t be able to afford this. Finally, even though they use a same source text, the design for the HTML and the print versions are decuopled and have to be imagined seperately—a small publisher might not have the time.</p>
+            
+            <p><img src="media/hybrid_publishing.png" width="1109" height="272" alt="Hybrid Publishing"></p>
+            
+            <p>A more feasible workflow, is to have HTML at the core. HTML can both be used as a ***</p>
+            
+            <p>HTML and CSS also offer the advantage of being simple, text-based formats that allow collaboration. Class 4A already learned about the collaboration methods employed by software developers, with Git and Github, and class 4B will do so in this block’s coding class.</p>
+
+            <p>Your will work on (the design of your) thesis in the form of a series of HTML and CSS files, potentially using JavaScript for interactivity. You will store these files on Github, and you will make sure that you create a stylesheet that creates an appropriate print output and screen display. Optionally, you will be able to use inDesign by feeding in the HTML.</p>
+            
+            <!-- http://radar.oreilly.com/2013/09/html5-is-the-future-of-book-authorship.html#more-63383 -->
+        </article>
+    </body>
+</html>
