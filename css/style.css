@@ -2,13 +2,18 @@ body {
     background-color: red;
     font-size: 34px;
     padding: 8px 16px 0px 8px;
+    text-decoration:line-through;
+<<<<<<< Updated upstream
     
+=======
+
+>>>>>>> Stashed changes
 }
 
 header {
     padding: 0 0 50px 0;
     font-size: 30px;
-    font-family: comic sans;
+    text-decoration:line-through;
 }
 
 li {
