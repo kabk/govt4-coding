@@ -32,17 +32,24 @@
         <article>
             <h2 class="break">Hybrid Publishing Workflows</h2>
 
+            <h3>Paper <em><strike>vs</strike> and</em> print</h3>
             <p>Print is not dead</p>
             
             <p>It is a book, remember?</p>
             
             <p><img src="media/carsonendofprint.jpg" width="535" height="391" alt="Carsonendofprint"></p>
+            
+            <p>The designer David Carson, rising to fame in the 1990ies, ironically called his hefty monograph ‘the end of print’. His books fits among a trend at the time for publishers and young designers to come up with such retrospective books, a geste until then mainly reserved for a select few established designers of advanced age. </p>
 
-            <p>Print is no longer the default window to other media though—it is the screen that has taken that place. Yet print and screen are in a constant dialog. Buy ‘Post-Digital Print: The Mutation of Publishing Since 1894’ from our friends at Onomatopee, and download the PDF from our friends at Monoskop.</p>
+            <p>“One of McLuhan’s big ideas was that every medium, at the peak of its power, is inclined to forget that it’s no more than a metaphor, a representation of reality. In its hubris, the medium wants to be reality. At the same time, it wants to portray all previous media as ‘just media’”. Such writes Momus in ‘<a href="http://designobserver.com/feature/paper-spends-more-time-with-its-family/3197/" title="Paper Spends More Time With Its Family: Design Observer">Paper Spends More Time With Its Family</a>’ (Design Observer, 03.31.05).</p>
+                        
+            <p>Paper was this medium, the medium through which all other media were represented (think of the traditional museum catalog as an embodiment of this logic). The web has become this medium. The explosion in book-making practices by graphic designers in recent years stresses the particularity of the book as a physical object, made of paper and ink. “The consolation prize for not being the Universal is getting to be the Particular.”</p>
+
+            <p>Print and Screens might have taken on different roles in our media society, they are, however, in a constant dialog. Alessandro Ludivico has written ‘Post-Digital Print: The Mutation of Publishing Since 1894’ in an attempt to cut through the dichotomy between paper and electronics, and to chart the the relations, transitions, mixes and hybridisations between the screen and the printed page. <a href="http://www.onomatopee.net/project.php?progID=c3149ad5e7c0b4bb6e80e4c770ee528c" title="onomatopee">Buy the book from our friends at Onomatopee</a>, <em>and</em> <a href="http://monoskop.org/images/a/a6/Ludovico,_Alessandro_-_Post-Digital_Print._The_Mutation_of_Publishing_Since_1894.pdf" title="">download the PDF from our friends at Monoskop</a>.</p>
             
             <p><img src="media/post_digital_print_motto_00.jpg" width="837" height="1083" alt="Post Digital Print Motto 00"></p>
             
-            <p>Consult Silvio Lorusso’s <a href="http://p-dpa.net/" title="P—DPA">Post-digital Publishing Archive</a>.</p>
+            <p>To find a great gathering of projects that treat these Silvio Lorusso’s <a href="http://p-dpa.net/" title="P—DPA">Post-digital Publishing Archive</a>, a great gathering of projects that treat the </p>
             
             <p><img src="media/pdpa.png" width="1076" height="772" alt="Pdpa"></p>
             
@@ -62,17 +69,28 @@
             
             <p>InDesign allows to read in XML. A certain tag can be coupled to a certain paragraph style. The key in this workflow is that inDesign can watch the XML document for changes, and update the document whenever the XML changes. So instead of correcting text and typos in inDesign, you do it in the XML document. A large publisher might also employ an interface to edit the source document, and a form of archiving and revision control to track the changes.</p>
             
-            <p>A publisher will also set up a workflow to convert the XML to HTML, and to ePUB (based in part on the HTML). This workflow is known as ‘single source’, and its largest advantage is that a change in the source text is automatically reproduced throughout all mediums. The downsides however, are also clear. This workflow calls for a lot of technological infrastructure. It requires knowledge within the organisation of myriad different technologies, and most smaller publishers don’t have dedicted technical staff. A large publisher might have parts of this workflow custom built; a small publisher won’t be able to afford this. Finally, even though they use a same source text, the design for the HTML and the print versions are decuopled and have to be imagined seperately—a small publisher might not have the time.</p>
+            <p>A publisher will also set up a workflow to convert the XML to HTML, and to ePUB (based in part on the HTML). This workflow is known as ‘single source’, and its largest advantage is that a change in the source text is automatically reproduced throughout all mediums. The downsides however, are also clear. This workflow calls for a lot of technological infrastructure. It requires knowledge within the organisation of myriad different technologies, and most smaller publishers don’t have dedicted technical staff. A large publisher might have parts of this workflow custom built; a small publisher won’t be able to afford this. Finally, even though they use a same source text, the design for the HTML and the print versions are decoupled and have to be imagined seperately—a small publisher might not have the time.</p>
+            
+            <p><em>Question: in the schedule the ePub is derived from the XML. But inDesign also knows how to make ePubs. Is that possible in this schema? Answer: Yes this is possible. inDesign makes reasonably good ePubs. It is an attractive solution for small publishers. However, often some post-processing of the ePub is still required. A large publisher will want a dependable workflow with a minimum of post-processing, so they’re probably going to create a custom solution for ePubs.</em></p>
+            
+            <p><em>Question: in this model, the text is shared, but is there a way to get the design out of inDesign? Answer: that’s not easy. The inventive engineers from the German company LeTex have some solutions for this, but this is in no way a straight-forward process. I’m going to work with them for a project at the Winterthür Museum so I’ll let you know how it works out! For now, an easier solution to re-use design is the model we’ll introduce next.</em></p>
             
             <p><img src="media/hybrid_publishing.png" width="1109" height="272" alt="Hybrid Publishing"></p>
             
-            <p>A more feasible workflow, is to have HTML at the core. HTML can both be used as a ***</p>
+            <p>A more feasible workflow, is to have HTML at the core. HTML can both be used as a presentation and a source format. Working on the HTML &amp; CSS gives immediate results, which can be placed online. An ePub file, being HTML files at its core, can be easily generated from the HTML design. This contrasts with working in inDesign, where generating ePubs is a bit clumsy because the program is so tied to fixed paper formats.</p>
+            
+            <p>To go from HTML to print can alse be rather straightforward. CSS allows one not just to specify specific behaviour for screen sizes, but also to adapt the design for print. With Open Source Publishing we have been doing quite a few projects this way. It is the route I would advise to take for the thesis, as it is the quickest, and the screen version is more important. However, if necessary, HTML also offers a path to inDesign: it can be converted to XML and then form the input for an inDesign document.</p>
             
             <p>HTML and CSS also offer the advantage of being simple, text-based formats that allow collaboration. Class 4A already learned about the collaboration methods employed by software developers, with Git and Github, and class 4B will do so in this block’s coding class.</p>
 
             <p>Your will work on (the design of your) thesis in the form of a series of HTML and CSS files, potentially using JavaScript for interactivity. You will store these files on Github, and you will make sure that you create a stylesheet that creates an appropriate print output and screen display. Optionally, you will be able to use inDesign by feeding in the HTML.</p>
             
-            <!-- http://radar.oreilly.com/2013/09/html5-is-the-future-of-book-authorship.html#more-63383 -->
+            <p>Question: is this a mainstream way of working? Answer: yes and no. Clearly, the two mainstream ways of working are the first two models outlined. The HTML based model we have chosen for the thesis we chose firstly because it fits well the requirements of the thesis development: easy collaboration and a hybrid output (web and print). We use techniques that are already mainstream in the world of hackers, technology activists and scientists. It is no surprise that the big editor adopting this model is O’Reilly, an editor of computer books. They have written a blog article on the subject: <a href="http://radar.oreilly.com/2013/09/html5-is-the-future-of-book-authorship.html" title="HTML5 is the Future of Book Authorship - O'Reilly Radar">‘HTML5 is the future of book authorship’</a>. </p>
+            
+            <!--<p><a href="http://journal.stuffwithstuff.com/2014/11/03/bringing-my-web-book-to-print-and-ebook/" title="Zero to 353 Pages: Bringing My Web Book to Print and eBook &ndash; journal.stuffwithstuff.com">Bringing My Web Book to Print and eBook</a> Two dozen mathematicians write a book together out in the open, benefiting from tools such as Git and Github. The enthousiasm is contagious!</p>  The HoTT book: <a href="http://math.andrej.com/2013/06/20/the-hott-book/" title="The HoTT book | Mathematics and Computation">Blog Post</a>, <a href="https://github.com/HoTT/book">Github repository </a>  -->
+            
+            <p>One of the best resources about these kind of hybrid workflows is the site for the <a href="http://networkcultures.org/digitalpublishing/" title="DIGITAL PUBLISHING TOOLKIT">Digital Publishing Toolkit</a>, a project by the Institute of Network Cultures in collaboration with the HvA and the Willem de Kooning Academy. Next to the myriad technical articles on the blog, the videos for the ‘Off the Press’ conference are well worth watching. Interesting are the the case studies (<a href="http://networkcultures.org/digitalpublishing/2014/05/27/pia-pol-digitizing-context-without-walls-creating-epubs-through-the-epubster-generator/" title="DIGITAL PUBLISHING TOOLKIT | Pia Pol: Digitizing Context Without Walls, Creating EPubs Through the EPubster Generator">1</a>, <a href="http://networkcultures.org/digitalpublishing/2014/05/27/loes-sikkes-highlights-epub-personalizer/" title="DIGITAL PUBLISHING TOOLKIT | Loes Sikkes: Highlights – EPub Personalizer">2</a>, <a href="http://networkcultures.org/digitalpublishing/2014/05/27/arjen-de-jong-sketching-skills/" title="DIGITAL PUBLISHING TOOLKIT | Arjen de Jong: Sketching skills">3</a>, <a href="http://networkcultures.org/digitalpublishing/2014/05/28/miriam-rasch-hybrid-workflows-for-hybrid-publishing/" title="DIGITAL PUBLISHING TOOLKIT | Miriam Rasch &#8211; Hybrid Workflows for Hybrid Publishing">4</a>), where various designers explain how they went about creating electronic books in relation to the problems specific to each project.</p>
+
         </article>
     </body>
 </html>
