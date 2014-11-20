@@ -1,18 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!-- ** see note -->
+
     <head>
-        <title>GOVT4 Coding</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <!-- The classical Cartesian distinction, head and body! In the head comes all the metadata page needs to function-->
+
+        <title>GOVT4 Coding :: Thesis Workflow Specifics</title> <!-- This is the title shown in the Window bar -->
+
+        <meta charset="utf-8"> <!-- You need this so the browser can understand ‘typographic quotes’ and accented characters éëê etc.-->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- This tag is important if we make a responsive site
+                                                                                  see http://kabk.github.io/govt4-coding/responsive-layout.html -->
+
+        <meta name="description" content="This is where you can put a short description of the page. Google will sometimes display this, and Facebook uses it to display in a link preview.">
+        
+        <!-- The following metadata can be useful for archiving -->
+        
+        <meta property="dc:creator" content="Schrijver, Eric">
+        <meta property="dc:created" content="2014-11-17T00:00:00Z">
+        <meta property="dc:modified" content="2014-11-20T00:00:00Z">
+        
+        <!-- Link stylesheets!-->
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" /> <!-- This normalize.css file takes care of some inconsistencies between browsers -->
+        <link rel="stylesheet" type="text/css" href="css/style.css" /><!-- Here I put the rest of my styles-->
     </head>
     <body>
-        <header>
-            <h1><a href="index.html">GOVT4 Coding</a></h1>
+        <header> <!-- In HTML5 there are the elements header, nav, article and aside that are just like divs (blocks)… 
+                      The only difference is that through their name, they indicate their function,
+                      so it helps in structuring the code -->
+                 <!-- Note: the <head> tag is invisible metadata, the <header> tag is visible on the page!-->
+            <h1><a href="index.html">GOVT4 Coding</a></h1> <!-- HTML allows for six levels of headings.
+                                                                 The convention is to use h1 for the site name, h2 for the article namee 
+                                                                 h3 for the section name, h4 for the subsection name etc.
+                                                                 Search engines rely on these headers -->
         </header>
         <nav>
-            <ul>
+            <ul> <!-- <ul> means unordered list. Instead of a ist of links like this, you could also make a paragraph and do many <br/>’s
+                      The advantage of the list is that each list element has their own node (<li>), which gives you more control
+                      over styling through CSS, and makes it more easy to add JavaScript behaviours (accordeon etcetera). -->
                 <li><a href="install-party.html">Install Party</a></li>
                 <li><a href="native-vs-hybrid-vs-web-the-ecosystem-of-mobile-applications.html">Native vs. Hybrid vs. Web: The ecosystem of the mobile applications</a></li>
                 <li><a href="responsive-layout.html">Responsive layout</a></li>
@@ -22,25 +47,61 @@
                 <li><a href="thesis_terminal.html">Thesis Terminal</a></li>
             </ul>
         </nav>
-        <article>
-<h2>Thesis Terminal Page</h2>
+        <article> <!-- I’ve put the main text in an ‘article’ tag. By default we will get a kind of static, blog style layout,
+                       where it will be one long scroll to the bottom. If you want to take elements of your thesis and position
+                       them in different ways, you might need to divide them up into <section>’s or <div>’s before you can
+                       position them through CSS -->
+            <h2>Thesis Workflow Specifics</h2>
 
-<p>Op Github projecten is er vaak een onderscheid tussen de code en de documentatie. De documentatie bestaat uit HTML en kan op internet worden gepubliceerd. Wij werken met alléén maar HTML. Daarom moeten we git vertellen dat de documentatie ‘branch’ onze belangrijkste ‘branch’ is. Wat is een ‘branch’? Git staat toe om parallel aan meerdere varianten van een project te werken. Als github een branch ‘gh-pages’ aantreft, wordt deze op internet gepubliceerd.</p>
+            <h3>From Word to HTML</h3><!-- The convention is to use h1 for the site name, h2 for the article name,
+                                           h3 for the section name, h4 for the subsection name etc.-->
 
-<p>Ga eerst in de terminal naar de map waarin je Git zich bevindt, bv: (aanpassen met je username en locatie)</p>
+            <p>You have probably experienced how messy it is to get a Word document into inDesign; this is the same with HTML. There is no straightforward way, it always comes down to a bit of ‘bricolage’. Microsoft Word might allow one to save a file as an HTML document, but the resulting HTML will however be too messy too use. A possible solution is to use an online tool like <a href="http://word2cleanhtml.com/" title="Convert Word Documents to Clean HTML">word2cleanhtml.com</a>. The easiest solution might actually be to copy all the text in paste it in your programming editor. This will remove all formatting. You then can start adding the HTML tags. To make adding HTML tags quicker, you can use a ‘Markdown’ program like <a href="http://25.io/mou/" title="25.io | Mou - Markdown editor for developers, on Mac OS X.">Moo</a>: this will automatically turn your blocks of plain text that are separated by a blank line into paragraphs.</p> <!-- This is the paragraph! The main unit of text. You can add margin after a
+                                                                  paragraph, and indent the first line, through CSS.
+                                                                  Within the paragraph, you can use the <br/> tag to do a line break.
+                                                                  If you want to have an indent after the line break, but not at the beginning
+                                                                  of the paragraph, you will have to do some trickery because this CSS is not
+                                                                  yet supported.
+                                                                  You might have noticed that HTML doesn’t respect the hard returns you put
+                                                                  into it. You need to use <p> and <br/> tags to break lines. -->
+            
+            <p>As an example of how to use HTML tags, you can look at the <a href="https://github.com/kabk/govt4-coding/blob/gh-pages/thesis_terminal.html">source code of this page</a>. It includes comments that explain various HTML tags. One thing that is not explained yet, is footnotes. We will get to that next week.</p>
+            
+            <h3>Getting your HTML onto GitHub</h3>
+            <p>In the lesson, most of you got around to creating a repository on the <a href="https://github.com/kabk">KABK organisation</a>, and adding bits of HTML. Here‘s a recap.</p>
+            
+            <p>From the KABK organisation, create a new repository by clicking: <img src="media/new_repository.png" width="140" height="40" alt="New Repository">. When creating your repository, it is easiest if you ‘Initialize this repository with a README’. The new repository appears, empty except for a README.md file. Github for Mac or Github for Windows users can click the button ‘Clone to Desktop’.</p>
+            
+            <p>Users of Source-Tree will have to do: menu &gt; Show Hosted Repositories (you might first need to login with your Github credentials). You will see all repositories that are part of <code>kabk</code>. Choose the one you just created, and ‘clone’ it.</p>
+            
+            <p>Now you have a copy of the repository on your computer. Find the folder, and add files to it. In Github for Mac/Windows, these will show up as ‘changes’. In Sourcetree as ‘Files in the Working Tree’. To select them, in SourceTree drag them up to ‘Files staged in the index’. In Github for Mac/Windows just make sure there is checkbox next to them. Then commit (add the changes to the local repository). You describe the commit with a message. In Github for Mac/Windows you can start typing directly, in SourceTree, first click ‘Commit’. Click ’Commit’ when you’ve finished your description and the change is added to your local history. To push it to the repository hosted on github, in Github for Mac/Windows click the ‘Sync’ button in the top right corner—in SourceTree click ‘Push’.</p>
+            
 
-<pre>cd /Users/thomas/kabk/Scriptie-map</pre>
+            <h3>Publishing HTML as a webpage on Github</h3>
+            
+            <p>You can share projects through Github, but you can also publish to the web. Like with this very page! The repository for this site is at <a href="https://github.com/kabk/govt4-coding">https://github.com/kabk/govt4-coding</a>, the corresponding web-address is <a href="https://github.com/kabk/govt4-coding">http://kabk.github.io/govt4-coding/</a>. To make it work directly from that address, a file index.html is needed in the repository.</p>
 
-<p>En dan</p>
+            <p>However, we need to do an additional step to start publishing to the web. This is because of the way Github has been designed. It is made for programming projects, which tend to have a separation between code and documentation. The web-publishing is usually used to publish documentation. Github uses a function of Git that allows to work on more than one variant of a project at a time, called ‘branches’. Normally, Github expects to code to be pushed to a branch called ‘master’ and the the documentation/web content to a separate branch called ‘gh-pages’. We want to only use the branch ‘gh-pages’, since our source code and our web content is one and the same.</p>
+            
+            <p>Dutch translation: Op Github projecten is er vaak een onderscheid tussen de code en de documentatie. De documentatie bestaat uit HTML en kan op internet worden gepubliceerd. Wij werken met alléén maar HTML. Daarom moeten we git vertellen dat de documentatie ‘branch’ onze belangrijkste ‘branch’ is. Wat is een ‘branch’? Git staat toe om parallel aan meerdere varianten van een project te werken. Als github een branch ‘gh-pages’ aantreft, wordt deze op internet gepubliceerd.</p>
+            
+            <p>To change branches, we’ll have to do some terminal wizardry!</p>
 
-<pre>git checkout -b gh-pages
-git push -u origin gh-pages
-</pre>
-
-<p>Je pagina komt online op http://kabk.github.io/naam-van-de-repository</p>
-
-<p>In de Github interface kun je bij settings, default branch op gh-pages zetten.</p>
-
+            <p>First open the terminal, and move to the folder where your git repository resides. For example (change with your username and location):</p>
+            
+            <pre>cd /Users/camille/kabk/scriptie-map</pre>
+            
+            <p>And then:</p>
+            
+            <pre>git checkout -b gh-pages
+git push -u origin gh-pages</pre>
+            
+            <p>Your page will be online at http://kabk.github.io/scriptie-map/</p>
+            
+            <p>Through Github’s web interface, at your repository, you can change: settings &gt; default branch into gh-page.</p>
         </article>
     </body>
+    
+<!-- ** note: Normally, just <html lang="en"> would be enough, but we add some extra attributes ‘xmlns’ and ‘xml:lang’ that ePub likes,
+     in case we are going to make an electronic book out of this website! -->
 </html>
