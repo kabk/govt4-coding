@@ -44,7 +44,7 @@
                 <li><a href="hybrid-publishing-workflows.html">Hybrid Publishing Workflows</a></li>
                 <li><a href="https://kabk.github.io/govt4-coding-and-interactive-media/">Exercises</a></li>
                 <li><a href="references.html">References</a></li>
-                <li><a href="thesis-workflow-specifics.html">Thesis Terminal</a></li>
+                <li><a href="thesis-workflow-specifics.html">Thesis Workflow Specifics</a></li>
             </ul>
         </nav>
         <article> <!-- I’ve put the main text in an ‘article’ tag. By default we will get a kind of static, blog style layout,
@@ -116,6 +116,13 @@ git push -u origin gh-pages</pre>
             <p>Your page will be online at http://kabk.github.io/scriptie-map/</p>
             
             <p>Through Github’s web interface, at your repository, you can change: settings &gt; default branch into gh-page.</p>
+            
+            <h3>Some tips in working with HTML, Git &amp; Github</h3>
+            <ul>
+                <li>One of the great advantages of Git is that it stores versions for you. Therefore you don’t need to store versions in separate files like this: <code>file_version1.html</code>, <code>file_version2.html</code>, <code>file_finalversion.html</code>, <code>filefinfinalversion.html</code>. Everyt time you commit, Git automatically stores the difference with the last version of the file you commited.</li>
+                <li>The internet is case sensitive. <code>Kabk.gif</code> and <code>kabk.gif</code> are seen as two different files. When making links etc. you have to be consistent. Web developers often choose to use only lowercase filenames to avoid possible confusion. It is also best to not use accents in filenames, and to replace spaces with underscores.</li>
+                <li>Your public website can be indexed by Google. If you prefer to keep it off Google while it is a work in progress, you can add the following code somewhere near the top of your HTML page: <code>&lt;meta name="robots" content="noindex"&gt;</code></li>
+            </ul>
         </article>
     </body>
     
