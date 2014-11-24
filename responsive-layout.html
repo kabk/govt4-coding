@@ -39,7 +39,7 @@
             <p>The underlying mechanism that makes this possible is a feature of CSS3 known as <em>Media Queries</em>. A media query allows to execute bits of CSS only when a certain condition is met. For example:</p>
             
             <pre>/* by default, our headings are pretty large */
-                h1 {
+h1 {
     64px;
 }
 
@@ -51,10 +51,33 @@
     }
 }</pre>
 
-            <p>This very website uses a responsive layout. You can check out the <a href="https://github.com/kabk/govt4-coding">source files</a>. If you are a student in the class at the KABK, you will have direct access to modify these files.</p>
+            <p>You might also have noticed that the navigation changes lay-out. On a small screen, it is better on top. On a large screen, we want it to the side. So we say:</p>
+
+            <pre>@media screen and (min-width: 480px) {
+    nav {
+        width: 200px;
+        float: left;     /* This makes it float to the left of the main content */
+        margin-left: 0;
+    }
+}</pre>
+
+            <p>Finally, media queries also work for print. In our print version, we don’t want to show the navigation:</p>
             
-            <p>As part of the course, we will learn how to use Git and Github (and their application <a href="http://mac.github.com/">Github for Mac</a>) to collaborate on this website.</p>
-                
+            <pre>@media only print {
+    nav {
+        display: none;
+    }
+}</pre>
+
+            <p>The CSS shown aboved is based on the CSS of this website. You can check out the <a href="https://github.com/kabk/govt4-coding">source files</a>. If you are a student in the class at the KABK, you will have direct access to modify these files.</p>
+            
+            <p>A website, by the way, needs one addition if you are going to use a responsive CSS as shown above. Somewhere in the top, put:</p>
+
+            <pre>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</pre>
+
+            <p>Because so many web designs are made to work around 960 pixels, by default iPhone like phones zoom out to show your design at 960 wide. The META tag tells the phone that it should show the site at the phone’s ‘native’ width (which, for the iPhones up until 5S is 320 pixels).</p>
+
+            
             <p><img src="media/800_480_vaiocp1with_remote_lg.jpg" width="830" height="718" alt="800 480 Vaiocp1with Remote Lg"></p>
             <p><img src="media/1024_600_maxi_ASUS_EeePC900_foto1.jpg" width="830" height="816" alt="1024 600 Maxi ASUS EeePC900 Foto1"></p>
             <p><img src="media/1024_768_02ibook_3q.jpg" width="830" height="586" alt="1024 768 02ibook 3q"></p>
