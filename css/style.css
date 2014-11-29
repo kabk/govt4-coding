@@ -38,6 +38,10 @@ p, svg {
     margin-bottom: 24px;
 }
 
+pre {
+    white-space: pre-wrap;
+}
+
 /* This makes the images scale to the full width of the page */
 img {
     width: 100%;
