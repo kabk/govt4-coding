@@ -1,9 +1,0 @@
-digraph {
-rankdir=LR;
-"Word/etc." -> Indesign
-
-Indesign -> "PDF proof" -> Indesign
-
-Indesign -> PDF -> Print
-
-}
