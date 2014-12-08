@@ -4,6 +4,10 @@ body {
     padding: 8px 16px 0px 8px;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 header {
     padding: 0 0 50px 0;
     font-size: 30px;
@@ -42,6 +46,14 @@ pre {
     white-space: pre-wrap;
 }
 
+figure {
+    margin: 0;
+    padding: 1em 40px;
+}
+
+figure figcaption {
+    padding-top: 1em;
+}
 /* This makes the images scale to the full width of the page */
 img {
     width: 100%;
@@ -52,6 +64,17 @@ img.noscale {
     width: inherit;
 }
 
+figure.halfleft, img.halfleft {
+    display: block;
+    width: 50%;
+    float: left; 
+}
+
+figure.halfright, img.halfright {
+    display: block;
+    width: 50%;
+    float: right; 
+}
 
 @media screen and (max-width: 480px) {
     /* These CSS instructions are only used, if the 
@@ -68,6 +91,16 @@ img.noscale {
      header h1 {
         font-size: 16px;
         font-style: italic;
+    }
+    
+    figure.halfleft, img.halfleft {
+        width: 100%;
+        float: inherit; 
+    }
+
+    figure.halfright, img.halfright {
+        width: 100%;
+        float: inherit; 
     }
 }
 
