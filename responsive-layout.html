@@ -6,24 +6,79 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <!-- You can also add a stylesheet that only works in one scenario:
+            <link rel="stylesheet" media="@media screen and (max-width: 36em)" type="text/css" href="css/style.css" /> -->
     </head>
     <body>
         <header>
-<<<<<<< HEAD
             <h1>I'm trying to do<br> SOMETHING</h1>
-=======
             <h1>GOVT4 Coding</h1>
->>>>>>> FETCH_HEAD
         </header>
         <nav>
             <ul>
                 <li><a href="install-party.html">Install Party</a></li>
                 <li><a href="native-vs-hybrid-vs-web-the-ecosystem-of-mobile-applications.html">Native vs. Hybrid vs. Web: The ecosystem of the mobile applications</a></li>
-                <li>Responsive layout</li>
+                <li><a href="cordova-phonegap-practice.html">Cordova/Phonegap practice</a></li>
+                <li><a href="responsive-layout.html">Responsive layout</a></li>
+                <li><a href="hybrid-publishing-workflows.html">Hybrid Publishing Workflows</a></li>
                 <li><a href="https://kabk.github.io/govt4-coding-and-interactive-media/">Exercises</a></li>
+                <li><a href="references.html">References</a></li>
+                <li><a href="thesis-workflow-specifics.html">Thesis Workflow Specifics</a></li>
             </ul>
         </nav>
         <article>
+            <h2>Responsive Layout</h2>
+            
+            <p>‘The centred layout is as static and conventional as a tombstone’: for a long time (let’s say, 2006–2012) the web focused on websites of 960px wide.</p>
+            
+            <p>The <a href="http://960.gs/" title="960 Grid System">960 Grid System</a> is a good example of this CSS aproach. I’ve <a href="http://network-for-choreographic-art.nl" title="Network for Choreography &amp; Related Art">used</a> <a href="http://i.liketightpants.net/and/" title="I like tight pants and mathematics">it</a> <a href="http://schr.fr" title="schr.fr | contemporary design">myself</a>: if the margins are the same background colour as the main column, it is not us apparant as in the examples that follow.</p>
+            
+            <p>Still, the downsides to this approach are clear: users with a very large monitor will have huge swaths of space on the site, whereas users of a very small monitor or a mobile device will have a site that does not fit into the screen.</p>
+            
+            <p>An initial solution to this problem was to create dedicated versions of a site for mobile applications. But this requires a lot of extra time and resources, and both for Google and for the purpose of sharing on social networks, it is not handy to have multiple webpages that have the same content. An alternative approach comes by the name of Responsive web design, a title donned by Ethan Marcotte in <a href="http://alistapart.com/article/responsive-web-design" title="Responsive Web Design · An A List Apart Article">his 2010 A List Apart article</a>. With responsive web design, the design knows how to adapt itself to the device that visits the website, and most importantly to the width of the screen.</p>
+            
+            <p>The underlying mechanism that makes this possible is a feature of CSS3 known as <em>Media Queries</em>. A media query allows to execute bits of CSS only when a certain condition is met. For example:</p>
+            
+            <pre>/* by default, our headings are pretty large */
+h1 {
+    64px;
+}
+
+/* but when the screen is small (no larger than 480px) */
+@media screen and (max-width: 480px) {
+    /* we want smaller headings*/
+    h1 {
+        16px;
+    }
+}</pre>
+
+            <p>You might also have noticed that the navigation changes lay-out. On a small screen, it is better on top. On a large screen, we want it to the side. So we say:</p>
+
+            <pre>@media screen and (min-width: 480px) {
+    nav {
+        width: 200px;
+        float: left;     /* This makes it float to the left of the main content */
+        margin-left: 0;
+    }
+}</pre>
+
+            <p>Finally, media queries also work for print. In our print version, we don’t want to show the navigation:</p>
+            
+            <pre>@media only print {
+    nav {
+        display: none;
+    }
+}</pre>
+
+            <p>The CSS shown aboved is based on the CSS of this website. You can check out the <a href="https://github.com/kabk/govt4-coding">source files</a>. If you are a student in the class at the KABK, you will have direct access to modify these files.</p>
+            
+            <p>A website, by the way, needs one addition if you are going to use a responsive CSS as shown above. Somewhere in the top, put:</p>
+
+            <pre>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</pre>
+
+            <p>Because so many web designs are made to work around 960 pixels, by default iPhone like phones zoom out to show your design at 960 wide. The META tag tells the phone that it should show the site at the phone’s ‘native’ width (which, for the iPhones up until 5S is 320 pixels).</p>
+
+            
             <p><img src="media/800_480_vaiocp1with_remote_lg.jpg" width="830" height="718" alt="800 480 Vaiocp1with Remote Lg"></p>
             <p><img src="media/1024_600_maxi_ASUS_EeePC900_foto1.jpg" width="830" height="816" alt="1024 600 Maxi ASUS EeePC900 Foto1"></p>
             <p><img src="media/1024_768_02ibook_3q.jpg" width="830" height="586" alt="1024 768 02ibook 3q"></p>

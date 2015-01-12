@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>GOVT4 Coding :: Cordova/Phonegap examples</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+    </head>
+    <body>
+        <header>
+            <h1><a href="index.html">GOVT4 Coding</a></h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="install-party.html">Install Party</a></li>
+                <li><a href="native-vs-hybrid-vs-web-the-ecosystem-of-mobile-applications.html">Native vs. Hybrid vs. Web: The ecosystem of the mobile applications</a></li>
+                <li><a href="responsive-layout.html">Responsive layout</a></li>
+                <li><a href="hybrid-publishing-workflows.html">Hybrid Publishing Workflows</a></li>
+                <li><a href="https://kabk.github.io/govt4-coding-and-interactive-media/">Exercises</a></li>
+                <li><a href="references.html">References</a></li>
+                <li><a href="thesis-workflow-specifics.html">Thesis Workflow Specifics</a></li>
+            </ul>
+        </nav>
+        <article>
+            <h2>Phonegap/Cordova examples</h2>
+            
+            <p>As detailed in page The ecosystem of mobile applications, there are quite some different ways to develop applications for a mobile phone. For this semester we work with Phonegap/Cordova, because it allows to use our existing knowledge of HTML and CSS.</p>
+            
+            <p>The timeline is as such:</p>
+            
+            <ul>
+                <li>8 December: Make groups. Present basic design of application</li>
+                <li>15 December: Create Git repository. Convert design to CSS</li>
+                <li>5 Januari: First interaction ready; JavaScript atelier in class</li>
+                <li>12 Januari: Application Ready</li>
+            </ul>
+            
+            <p>Because your thesis is rather demanding, we will try to keep the app development low-key: that means that two screens (if well designed) can already be enough for your application You make groups of 3 or 4 and choose from two assignments: ‘Poetic Spam Device’ and ‘Useless Correlation Application’. The assignments are detailed on the page <a href="https://kabk.github.io/govt4-coding-and-interactive-media/">https://kabk.github.io/govt4-coding-and-interactive-media/</a>.</p>
+            
+            <p>Because Cordova uses web technologies, you will use much the same technology as for the thesis. A big difference is that the use of JavaScript is required. If you want to brush up on your JavaScript the <a href="http://www.codecademy.com/en/tracks/javascript" title="JavaScript  | Codecademy">JavaScript</a> and jQuery courses at CodeAcademy can be useful.</p>
+            
+            <h3>Example apps</h3>
+            
+            <p>Feel fry to look around in these examples and copy bits and pieces.</p>
+            
+            <figure class="halfleft">
+                <img src="media/comment-spam-screenshot.png" width="640" height="960" alt="Comment Spam Screenshot">
+                <figcaption>Screenshot from ‘Comment Spam’, an example of a simple Cordova/PhoneGap App for the exercise ‘Poetic Spam Device’. <a href="https://github.com/kabk/comment-spam">See the code on Github</a>.</caption>
+            </figure>
+            
+            <figure class="halfright">
+                <img src="media/more-rain-screenshot.png" width="640" height="960" alt="More Rain Screenshot">
+                <figcaption>Screenshot from ‘More Rain’, an example of a simple Cordova/PhoneGap App for the exercise ‘Useless Correlation Application’. <a href="https://github.com/kabk/more-rain">See the code on Github</a>.</caption>
+            </figure>
+            
+            <p>There are two example apps. Their code is relatively straightforward.</p>
+            
+            <h3>References</h3>
+            
+            <p>The students from 4A collected <a href="http://kabk.github.io/govt4-coding/references.html" title="GOVT4 Coding">a series of references</a>; interesting applications that are (loosely) related to the themes of the app assignments.</p>
+            
+            <h3>How Phonegap/Cordova works</h3>
+            
+            <p>Building an app with Phonegap/Cordova is quite similar to building a web-site or web application. The main difference is the way in which you will handle navigation through the application.</p>
+            
+            <blockquote>
+                <p>Cordova applications are web applications running inside of a client-side native application container. Therefore, web applications running within a Cordova application leverage an HTML5 application structure rather than that of a traditional server-based web application.</p>
+                
+                <p>With old school, traditional web applications, a web server serves up either static HTML pages or dynamic pages to the requesting user agent (the browser). With dynamic pages, a server-side language or scripting language is used to retrieve dynamic content (from a database, for example) and format it all into HTML before sending it to the browser. When the browser makes a request, the server retrieves the containing page and content, massages it all into HTML (or some variant such as XHTML), and sends it to the browser to be displayed.</p>
+                
+                <cite>Wargo, John M. <em>Apache Cordova 3 programming</em>. Addison-Wesley, 2013 p. 10</cite>
+            </blockquote>
+                
+            <p>This is the way in which this very site is structured, and how many of you will have been working on the thesis. There is a different file for each page:</p>
+            
+            <figure class="halfleft">
+                <img src="media/traditional-site-structure.png" width="247" height="265" alt="Traditional Site Structure">
+            </figure>
+            
+            <blockquote>
+                <p>With HTML5, web applications can make use of new capabilities that allow an application to operate more efficiently on a mobile device (or devices with limited connectivity), and they can use a client- side database to store application data. (…) To leverage these HTML5 capabilities, though, a web application must be written so it is able to run completely within the browser container (or, in the case of Cordova applications, within the Cordova application container). The index.html file is typically the only HTML file in the application, and the application’s different “screens” are actually just different &lt;div&gt; containers that are switched in and out as needed by the application. HTML5 applications will still reach out to a server for data as needed, using XHR to request data asynchronously and store it locally.</p>
+                
+                <cite>p. 10-11</cite>
+            </blockquote>
+            
+            <p>With Phonegap/Cordova, there is just one HTML file:</p>
+            
+            <figure class="halfleft">
+                <img src="media/phonegap-app-structure.png" width="250" height="282" alt="Phonegap App Structure">
+            </figure>
+            
+            <p>Because you don’t want to show all the screens at the same time, you will have to use JavaScript to hide parts of the screen and show them on certain. While with the thesis you can use JavaScript as part of your design, with PhoneGap/Cordova you <em>have</em> to.</p>
+            
+            <p>Elements like tabs, caroussels etcetera are created with a combination of CSS, HTML and JavaScript. You can use a framework like jQuery Mobile </p>
+            
+            <h3></h3>
+            
+            <blockquote>
+                <p>As you can see from the application examples highlighted so far, the Cordova framework doesn’t do anything to enhance the user interface (UI) of a Cordova application. The framework provides access to device-specific features and applications and leaves it up to developers to theme their applications however they see fit. Web developers should use the capabilities provided by HTML, CSS, and even JavaScript to enhance the UI of their Cordova applications as needed.</p>
+                
+                <cite>p. 66</cite>
+            </blockquote>
+            
+            <p>The author goes on to mention a number of existing sets of Libraries that you can start building your interfaces on. These are pre-existing bits of CSS, JavaScript and HTML that allow you to easily make interface elements like lists, buttons, He mentions jQuery mobile (which I think is a lot of stuff, so it’s not easy to customise). I personally think <a href="http://getbootstrap.com/" title="Bootstrap &middot; The world's most popular mobile-first and responsive front-end framework.">Bootstrap</a> is nice, because it is more minimialistic. Adobe also creates a set of pre-built CSS to help you create app interfaces, called Topcoat. I find it to be, well ugly.</p>
+            
+
+            </blockquote>
+        </article>
+    </body>
+</html>
