@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>GOVT4 Coding :: Install Party</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+    </head>
+    <body>
+        <header>
+            <h1><a href="index.html">GOVT4 Coding</a></h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="install-party.html">Install Party</a></li>
+                <li><a href="native-vs-hybrid-vs-web-the-ecosystem-of-mobile-applications.html">Native vs. Hybrid vs. Web: The ecosystem of the mobile applications</a></li>
+                <li><a href="cordova-phonegap-practice.html">Cordova/Phonegap practice</a></li>
+                <li><a href="responsive-layout.html">Responsive layout</a></li>
+                <li><a href="hybrid-publishing-workflows.html">Hybrid Publishing Workflows</a></li>
+                <li><a href="https://kabk.github.io/govt4-coding-and-interactive-media/">Exercises</a></li>
+                <li><a href="references.html">References</a></li>
+                <li><a href="thesis-workflow-specifics.html">Thesis Workflow Specifics</a></li>
+                <li>Metadata for Social Networks and Search Engine Optimisation</li>
+            </ul>
+        </nav>
+        <article>
+            <h1 id="metadata-search-engines-social-networks-a-primer">Metadata, search engines, social networks: a primer</h1>
+            <p>Once you make a webpage, you want people to find it and to share it.</p>
+            <h2 id="letting-google-read-you">Letting Google read you</h2>
+            <p>There are people who make a living out search engine optimisation. The details can be arcane. But the basics are very simply and you should learn them yourself. Google indexes three things:</p>
+            <ul class="incremental">
+            <li>The text of your page</li>
+            <li>The metadata of your page</li>
+            <li>How your pages is linked from other pages</li>
+            </ul>
+            <p>In the first place, Google needs to be able to read your page. The Google-bot can read text. More specifically, it can read the text in a HTML page. Everything else requires extra effort on your part. Flash used to be a pain, for example.</p>
+            <p>The text that is easiest for Google to read is the source of the webpage. That means that all text added afterwards by JavaScript (or loaded in from other pages) is not scraped by Google (unless you take extra effort). Websites that are made as separate HTML pages (like your thesis) or with a server-side language like PHP (like Wordpress) are generally fine. If you do navigation and loading content with JavaScript you need to take extra measures to make sure the content is indexed.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+            <p>Historically, Google’s algorithms have excelled at indexing text without using keywords. But a page’s metadata matters as well. More about that in the next section.</p>
+            <p>Finally, a deciding factor in Google’s ranking since the early days has been how others link to your page. The more people link to your page, the better it will perform in Google results. This is something that is not easy to achieve overnight. But once you have a few well visited sites linking to your page, it will usually start to perform much better in the rankings.</p>
+            <h2 id="metadata">Metadata</h2>
+            <p>Metadata means data about data. In the context of a website, metadata is all the information contained in the code that is not directly visible on the page, but can be read be computer programs. Metadata is useful to organise information (like in a library catalogue), or to quickly decide if something is worth your time (the summary on the back of a book), or even if you can afford it (the price tag).</p>
+            <p>One metadata tag you have surely used is <code>&lt;title&gt;</code></p>
+            <pre><code>&lt;title&gt;This is the title of the website&lt;/title&gt;</code></pre>
+            <p>This is the title of your page, as displayed in the browser tab. It is used by default in many other places, such as Google search results, bookmark names, etc.</p>
+            <p>For other meta-information, there is a dedicated HTML tag: <code>&lt;meta&gt;</code>. It used for many different meta-datas, using the general form:</p>
+            <pre><code>&lt;meta name=&quot;meta-data-name&quot; content=&quot;The contents of the metadata&quot; /&gt;</code></pre>
+            <p>One meta-tag that is important to use is the description.</p>
+            <pre><code>&lt;meta name=&quot;description&quot; content=&quot;In this you can put a short description of your website. It will be used as a description in Some cases.&quot; /&gt;</code></pre>
+            <p>Your description does not need to be different for each page—but it very well can be.</p>
+            <h2 id="google-and-meta-data">Google and meta-data</h2>
+            <p>Search engines have traditionally used metadata to create their indexes. HTML has a tag to specify keywords. But keywords can be incomplete, and authors can try to trick search engines into giving them a good rating by adding popular keywords that are not really related to the content. That is why Google has long been ignoring keywords, and favours reading and indexing the text of the page directly.</p>
+            <p>That does not mean Google does not look at metadata at all. The name of a listing in search results is taken directly from the <code>&lt;title&gt;</code> tag. And if it can not extract a nice sentence to use in the short descriptive text underneath a link, it will use the <code>description</code> meta tag.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+            <h3 id="facebook-twitter-previews-and-metadata">Facebook, twitter, previews and metadata</h3>
+            <p>Page metadata has gained a new importance with the rise of social media. When sharing a link to a page, sites like Facebook and Twitter show a preview of that page. Needless to say, the more enticing that preview, the more people will visit that page. The preview is based on meta-data present in the page.</p>
+            <h4 id="the-open-graph-protocol">The Open Graph protocol</h4>
+            <p>To control the appearance of the preview on Facebook, Facebook has introduced the <a href="http://ogp.me/" title="The Open Graph protocol">Open Graph protocol</a>. It is loosely based on the existing <a href="http://www.w3.org/TR/xhtml-rdfa-primer/" title="RDFa 1.1 Primer - Third Edition">RDF/A protocol</a>. In true monopolist style, it is not completely compatible. Open Graph uses meta tags that look just like regular HTML meta tags, except that they use <code>property</code> instead of <code>name</code>:</p>
+            <pre><code>&lt;meta property=&quot;og:something&quot; content=&quot;The content of the facebook metadata&quot; /&gt;</code></pre>
+            <p>These are the most important ones:</p>
+            <pre><code>&lt;meta property=&quot;og:title&quot; content=&quot;The title of the page&quot; /&gt;
+            &lt;meta property=&quot;og:site_name&quot; content=&quot;The name of the website containing the page&quot; /&gt;
+            &lt;meta property=&quot;og:description&quot; content=&quot;A short description of the page’s content&quot; /&gt;
+            &lt;meta property=&quot;og:image&quot; content=&quot;http://example.com/url-to-preview-image.jpg&quot; /&gt;
+            &lt;meta property=&quot;og:author&quot; content=&quot;The name of the author of page&quot; /&gt;</code></pre>
+            <p>One might notice that some of these properties are very similar to the ones we could already encode with other HTML meta tags. There are some differences though. The <code>&lt;title&gt;</code> tag often contains both the name of the website and the current page:</p>
+            <pre><code>&lt;title&gt;Mouse (computing) - Wikipedia, the free encyclopedia&lt;/title&gt;</code></pre>
+            <p>In a Facebook preview these are separated. So they could be encoded like:</p>
+            <pre><code>&lt;meta property=&quot;og:title&quot; content=&quot;Mouse (computing)&quot; /&gt;
+            &lt;meta property=&quot;og:site_name&quot; content=&quot;Wikipedia, the free encyclopedia&quot; /&gt;</code></pre>
+            <p>If this information is not encoded in an og-tag, Facebook will fall back to the <code>&lt;title&gt;</code> for the <code>og-title</code>, and the websites url for <code>og:site_name</code>.</p>
+            <p>The one tag that is really useful, and that I would definitely recommend to use, is <code>og:image</code>. It allows one to specify an image that shown in the feed. The preferred format is currently 1200 by 630 pixels. Images exactly in this format will show up the biggest in the timeline.</p>
+            <p>You can check how Facebook scrapes your website in the <a href="https://developers.facebook.com/tools/debug">Debugger</a>.</p>
+            <h4 id="twitter-cards">Twitter cards</h4>
+            <p>Twitter has its own standard similar to Open Graph, called <a href="https://dev.twitter.com/cards/overview">Twitter cards</a>. It allows you to once again describe title, description, preview image etc. If there are no Twitter tags present it will fall back to the Facebook data. This means using Twitter tags is not really necessary in most cases. There are two tags that can be practical though. With <code>twitter:site</code> and <code>twitter:creator</code> one can link to the twitter accounts that are responsible for the site and the creator of the specific page, respectively. In this way, when content is shared through Twitter, Twitter users can quickly find these accounts.</p>
+            <h3 id="an-example">An example</h3>
+            <p>Putting it all together, a recent newspaper article on why the Flemish public likes Dutch TV personalities can be encoded as such:</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+                &lt;head&gt;
+                    &lt;meta charset=&quot;utf-8&quot;&gt;
+                    &lt;title&gt;Waarom Vlamingen toch zo van Nederlanders houden - NRC Handelsblad van donderdag 11 juni 2015&lt;/title&gt;
+                    &lt;meta name=&quot;description&quot; content=&quot;Het Laatste Nieuws lijft Jan Mulder in voor een recordbedrag als columnist: hij zou 750.000 euro krijgen voor drie jaar columns schrijven. Waarom doet hij het zo goed bij onze zuiderburen?&quot; /&gt;
+                    &lt;meta property=&quot;og:title&quot; content=&quot;Waarom Vlamingen toch zo van Nederlanders houden&quot; /&gt;
+                    &lt;meta property=&quot;og:site_name&quot; content=&quot;NRC Handelsblad&quot; /&gt;
+                    &lt;meta property=&quot;og:image&quot; content=&quot;http://static.nrc.nl/images/w640/1106mediajanmulder.jpg&quot; /&gt;
+                    &lt;meta property=&quot;og:author&quot; content=&quot;The name of the author of page&quot; /&gt;
+                    &lt;meta property=&quot;twitter:site&quot; content=&quot;@nrc&quot;&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    ....
+                &lt;/body&gt;
+            &lt;/html&gt;</code></pre>
+            <div class="footnotes">
+            <hr />
+            <ol>
+            <li id="fn1"><p>Admittedly, this is rapidly changing. Google will know how to read more and more JavaScript. In which case you still have to use a ‘client-side router’ to make sure every part of your site has its own url.<a href="#fnref1">↩</a></p></li>
+            <li id="fn2"><p>Google can more sophisticated metadata, although this requires more advanced markup techniques. Check out ‘<a href="https://developers.google.com/structured-data/">Promote Your Content with Structured Data Markup</a>’.<a href="#fnref2">↩</a></p></li>
+            </ol>
+            </div>
+        </article>
+    </body>
+</html>
