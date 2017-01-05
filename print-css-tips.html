@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>GOVT4 Coding</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <style>
+        pre {
+            font-size: 18px;
+            line-height: 24px;
+        }
+        </style>
+
+    </head>
+    <body>
+        <header>
+            <h1>GOVT4 Coding</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="hybrid-publishing-workflows.html">Hybrid Publishing Workflows</a></li>
+                <li><a href="thesis-workflow-specifics.html">Thesis Workflow Specifics</a></li>
+                <li><a href="responsive-layout.html">Responsive layout</a></li>
+                <li><a href="print-css-tips.html">Extra Tips Print Stylesheets</a></li>
+                <li><a href="metadata-for-social-networks-and-search-engine-optimisation.html">Metadata for Social Networks and Search Engine Optimisation</a></li>
+            </ul>
+        </nav>
+        <article>
+            <h2>Several Tips for Print Stylesheets</h2>
+
+            <p>In <a href="responsive-layout.html">Responsive layout</a> we’ve covered the basics of how to set up your HTML and CSS so that your site can respond differently to various media, including print. This page lists some extra tips on how to deal with print stylesheets.</p>
+
+            <h3>Setting up</h3>
+            <p>We’ve already seen that in an HTML page we can link to a stylesheet:</p>
+
+            <pre>&lt;link rel="stylesheet" type="text/css" href="style.css" /&gt;</pre>
+
+            <p>Note, that unlike many websites and tutorials, we don’t add <code>media="screen"</code> in the link. This way the stylesheet will be applied for both print and screen.</p>
+
+            <p>It is inside the stylesheet we can have separate instructions for screen and for print:</p>
+
+            <pre>@media print {
+    /* CSS declarations here*/
+}</pre>
+
+            <p>This can be a very useful approach, as you can keep parts of the CSS shared for both media.</p>
+
+            <p>If you want two separate stylesheets, that’s also possible. In your HTML you can link to two different files, one for print and one for screen:</p>
+
+            <pre>&lt;link rel="stylesheet" type="text/css" media="print" href="print.css" /&gt;
+&lt;link rel="stylesheet" type="text/css" media="screen" href="screen.css" /&gt;</pre>
+
+            <h3>Units</h3>
+
+            <p>Some of the units in CSS are based on pixel units like <code>px</code>. You can also use absolute units like <code>pt</code>, <code>mm</code> and <code>cm</code>. In theory, it is not recommended to use <code>px</code> in print CSS because there are no pixels on a screen, but CSS standardises a conversion where one pixel equals 1/96th of an inch. So it is also fine to use <code>px</code> units for print.</p>
+
+            <h3>@page declaration</h3>
+
+            <p>To control the way in which your page is printed, the <code>@page</code> declaration offers some control. You can determine things such as the margin.</p>
+
+            <p>An example declaration is</p>
+
+            <pre>@page {
+  margin-top: 7cm;
+  margin-bottom: 2cm;
+  margin-left: 2cm;
+  margin-right: 2cm;  
+}</pre>
+
+            <p>There several modifiers you can use to have different margins for different pages.</p>
+
+            <pre>@page {
+    margin-top: 7cm;
+    margin-bottom: 2cm;
+}
+
+@page :left {
+    margin-left: 3cm;
+    margin-right: 2cm;
+}
+
+@page :right {
+    margin-left: 3cm;
+    margin-right: 2cm;
+}</pre>
+
+            <p>Both Firefox and Chrome support this syntax. In my experience Chrome has the best support. Safari doesn’t support <code>@page</code> at all.</p>
+
+            <h3>Page numbers and running headers</h3>
+
+            <p>In printed documents, pages have recurrent elements that help to navigate through the publication. Running headers, page numbers etc.</p>
+
+            <p>There are a number of CSS specifications that implements standards for these elements. These rules allow to target the margins of the printed page, and then fill these margins with generated content (for example, chapter titles) or counters (for page numbers).</p>
+
+            <p>Sadly, no browser really supports these specifications. You need to use a separate software like <a href="https://www.princexml.com/">Prince XML</a>. A tutorial that uses advanced CSS properties supported by Prince is available at <a href="https://www.smashingmagazine.com/2015/01/designing-for-print-with-css/">https://www.smashingmagazine.com/2015/01/designing-for-print-with-css/</a>. The problem with Prince, though, is that is a commercial software, and also that it doesn’t really fit our setup: what’s really fun with printing from the browser is that potentially anybody can do it from home.</p>
+
+            <p>Another option is <a href="https://github.com/osp/osp.tools.html2print">html2print</a> by my colleagues from OSP. They provide HTML, CSS and JS so you can create running headers and page numbers. The browser provides a print preview. The downside to this solution is that it doesn’t take into account the hybrid screen/print approach either. This is a tool designed to create print output from the browser, and not a tool for hybrid publications.</p>
+
+            <h3>Page breaks</h3>
+
+            <p>When printed, your site will probably take up multiple pages. When it lays out the web page, the browser has to decide when to break the flow before starting again on the next page. You can’t fine-tune this process as easily as in a traditional page lay-out program, but you can adjust it with CSS instructions.</p>
+
+            <p>Two important css properties are <code>page-break-after</code> and <code>page-break-before</code>. You can use these to say that after or before a certain element, there will be a page break. For example, if each chapter is inside a div with a class of ‘chapter’, we might want to begin on a new page for each chapter:</p>
+
+            <pre>div.chapter {
+   page-break-before: always;
+}</pre>
+
+            <p>Another property is <code>page-break-inside</code>. You can use this to stop page-breaks to occur altogether. You might want to use this on your paragraphs. Why? Because you don’t have the detailed control of a layout program made for fixed paper sizes, it might happen that you get typographically awkward page breaks. You might have paragraphs that start on the last line of the page for example.</p>
+
+            <p>By avoiding page-breaks altogether, you avoid awkward page-breaks. The downside is that the bottom margin of your document can become quite ragged as entire paragraphs are pushed to the next page.</p>
+
+            <pre>p {
+   page-break-inside: avoid;
+}</pre>
+
+<h3>And more</h3>
+
+<p>Feel free to share more tips about printing with CSS!</p>
+        </article>
+    </body>
+</html>
