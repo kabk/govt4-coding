@@ -67,33 +67,31 @@
 
 <p>We won’t use all the power of Git this semester. Since everyone will be working on their own thesis, you might not encounter all the collaboration models it has to offer. But what we will use, is Git’s power to archive, as well as an extremely practical feature of Github: to automatically publish the contents of a Git repository as a website.</p>
 
+            <h3 id="publishing-html-as-a-webpage-on-github">Publishing HTML as a webpage on Github</h3>
+            
+            <p>You can share projects through Github, but you can also publish to the web. Like with this very page! The repository for this site is at <a href="https://github.com/kabk/govt4-coding">https://github.com/kabk/govt4-coding</a>, the corresponding web-address is <a href="http://kabk.github.io/govt4-coding/">http://kabk.github.io/govt4-coding/</a>. To make it work directly from that address, a file index.html is needed in the repository.</p>
+
+            <p>Initially, Github’s HTML publishing functionality was meant to host documentation for the code projects shared on Github. That’s why you had to put HTML in a separate ‘branch’ of your code. But now you can simply directly publish your code online.</p>
+
             <h3>Getting your HTML onto GitHub</h3>
             <p>You will need to create an account on the <a href="https://github.com/">Github site</a>. You’ll also need to download the <a href="https://desktop.github.com/">Github desktop application</a>. If your version of OS X is not supported, you might have more luck with <a href="https://www.sourcetreeapp.com/">SourceTree</a>. Once you’re set up, send me a message with your username and I’ll invite you to the KABK organisation.</p>
-            
+
             <ol>
                 <li>From the <a href="https://github.com/kabk">KABK organisation</a>, create a new repository by clicking: <img src="media/new_repository.png" width="140" height="40" class="noscale" alt="New Repository">.</li>
-                <li>Your title should follow this pattern: <code>go-theses-17-your-name-the-title-of-your-thesis</code></li>
+                <li>Your title should follow this pattern: <code>go-theses-18-your-name-the-title-of-your-thesis</code></li>
                 <li>Fill in the title and choose ‘Initialize this repository with a README’.</li>
                 <li>The new repository appears, empty except for a README.md file.</li>
+                <li>Click the tab ‘Settings’. Scroll down to ‘GitHub Pages’. For ‘Source’, where it currently says ‘None’, select ‘master branch’.</li>
+                <li>Return to the ‘Code’ tab.</li>
                 <li>Github for Mac or Github for Windows users can click the button ‘Clone to Desktop’.<br/>
                     Users of Source-Tree will have to do: menu &gt; Show Hosted Repositories (you might first need to login with your Github credentials). You will see all repositories that are part of <code>kabk</code>. Choose the one you just created, and ‘clone’ it.</li>
-                <li>We’re adding a new ‘branch’. Click on the ‘add a new branch’ button (to the left of the dropdown that says ‘master’). Add a branch called <code>gh-pages</code>. Use the dropdown menu to select this branch as your current branch.</li>
-                <li>Now you have a copy of the repository on your computer, with the branch setup. Find the folder, and add files to it. At least add a file called <code>index.html</code>: this will be your home page</li>
+                <li>Now you have a copy of the repository on your computer. Find the folder, and add files to it. At least add a file called <code>index.html</code>: this will be your home page</li>
                 <li>In Github for Mac/Windows, new files will show up as ‘changes’. In Sourcetree as ‘Files in the Working Tree’.</li>
                 <li>To select the new files, in SourceTree drag them up to ‘Files staged in the index’. In Github for Mac/Windows just make sure there is checkbox next to them.</li>
                 <li>To commit (add the changes to the local repository: first describe your commit with a message. In Github for Mac/Windows you can start typing directly, in SourceTree, first click ‘Commit’. Click ’Commit’ when you’ve finished your description and the change is added to your local history.</li>
                 <li>To push it to the repository hosted on Github, in Github for Mac/Windows click the ‘Sync’ button in the top right corner—in SourceTree click ‘Push’.</li>
-                <li>Your page will be online at https://kabk.github.io/go-theses-17-your-name-the-title-of-your-thesis/</li>
-                <li>You will be able to check the status of your github repository at https://github.com/kabk/go-theses-17-your-name-the-title-of-your-thesis<br/> Use this interface to delete the master branch: you don’t need it any more.
-</li>
+                <li>Your page will be online at https://kabk.github.io/go-theses-18-your-name-the-title-of-your-thesis/</li>
         </ol>
-            
-
-            <h3 id="publishing-html-as-a-webpage-on-github">Publishing HTML as a webpage on Github</h3>
-            
-            <p>You can share projects through Github, but you can also publish to the web. Like with this very page! The repository for this site is at <a href="https://github.com/kabk/govt4-coding">https://github.com/kabk/govt4-coding</a>, the corresponding web-address is <a href="https://github.com/kabk/govt4-coding">http://kabk.github.io/govt4-coding/</a>. To make it work directly from that address, a file index.html is needed in the repository.</p>
-
-            <p>However, we needed to do an additional step to start publishing to the web: we added a ‘branch’ called ‘gh-pages’ This is because of the way Github has been designed. It is made for programming projects, which tend to have a separation between code and documentation. The web-publishing is usually used to publish documentation. Github uses a function of Git that allows to work on more than one variant of a project at a time, called ‘branches’. Normally, Github expects to code to be pushed to a branch called ‘master’ and the the documentation/web content to a separate branch called ‘gh-pages’. We want to only use the branch ‘gh-pages’, since our source code and our web content is one and the same.</p>
 
             <h3>Some tips in working with HTML, Git &amp; Github</h3>
             <ul>
